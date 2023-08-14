@@ -25,7 +25,9 @@ btnSearch.addEventListener('click', () => {
         </div>`
         sound.setAttribute("src", `https:${data[0].phonetics[0].audio}`);
         console.log(sound);
-    });
+    }).catch (() => {
+        result.innerHTML = `<h3 class="error">Couldn't Find the Word</h3>`
+    })
 });
 
 function playSound() {
